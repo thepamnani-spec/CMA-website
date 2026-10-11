@@ -8,7 +8,6 @@ import {
   Clock,
   MessageSquare,
   CheckCircle,
-  ShieldCheck,
   Send,
   Building,
   Database,
@@ -74,18 +73,18 @@ export const ContactPage: React.FC = () => {
   )}`;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 text-zinc-100">
       {/* Header */}
       <div className="max-w-3xl space-y-3">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAB308]">
           <span>Get in Touch</span>
           <span aria-hidden="true">·</span>
           <span>Krish & Associate</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10243A]">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
           Consultation & Office Contact
         </h1>
-        <p className="text-base text-slate-600 leading-relaxed">
+        <p className="text-base text-zinc-300 leading-relaxed">
           Schedule an in-person meeting in Ahmedabad or connect directly via WhatsApp, telephone, or our structured consultation request form.
         </p>
       </div>
@@ -93,53 +92,53 @@ export const ContactPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Column: Office Details & Direct Channels */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="bg-[#10243A] text-white p-8 rounded-lg border border-[#183B56] space-y-6 shadow-sm">
+          <div className="bg-[#121214] text-white p-8 rounded-lg border border-[#27272A] space-y-6 shadow-xl">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-[#C5A15A] block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#EAB308] block">
                 Primary Contact
               </span>
               <h2 className="font-serif text-2xl font-bold text-white mt-1">
                 Krish Pamnani
               </h2>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-zinc-400">
                 Founder & Lead Financial Advisor
               </p>
             </div>
 
-            <div className="space-y-4 pt-2 text-sm text-slate-200">
+            <div className="space-y-4 pt-2 text-sm text-zinc-300">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#C5A15A] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#EAB308] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white text-xs uppercase tracking-wider mb-0.5">
                     Location & Office
                   </strong>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-zinc-400 leading-relaxed">
                     {siteConfig.location.addressDetails}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#C5A15A] shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#EAB308] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white text-xs uppercase tracking-wider mb-0.5">
                     Office Hours
                   </strong>
-                  <p className="text-xs text-slate-300">
+                  <p className="text-xs text-zinc-400">
                     {siteConfig.contact.workingHours}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#C5A15A] shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-[#EAB308] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white text-xs uppercase tracking-wider mb-0.5">
                     Telephone (Direct)
                   </strong>
                   <a
                     href={`tel:${siteConfig.contact.phoneTel}`}
-                    className="text-xs text-slate-200 hover:text-white"
+                    className="text-xs text-zinc-300 hover:text-white"
                   >
                     {siteConfig.contact.phoneDisplay}
                   </a>
@@ -147,14 +146,14 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#C5A15A] shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#EAB308] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white text-xs uppercase tracking-wider mb-0.5">
                     Official Email
                   </strong>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="text-xs text-slate-200 hover:text-white"
+                    className="text-xs text-zinc-300 hover:text-white"
                   >
                     {siteConfig.contact.email}
                   </a>
@@ -163,14 +162,14 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Direct WhatsApp Quick Launch */}
-            <div className="pt-4 border-t border-slate-700">
+            <div className="pt-4 border-t border-[#27272A]">
               <a
                 href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
                   "Hello Krish & Associate, I would like to schedule a consultation in Ahmedabad."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2.5 py-3 px-4 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold uppercase tracking-wider rounded-sm transition-colors shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2.5 py-3 px-4 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors shadow-md"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
                 <span>Chat on WhatsApp ({siteConfig.contact.whatsappDisplay})</span>
@@ -179,9 +178,9 @@ export const ContactPage: React.FC = () => {
           </div>
 
           {/* Regional Ahmedabad Presence Card */}
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2 text-xs text-slate-600">
-            <div className="flex items-center gap-2 text-slate-900 font-semibold">
-              <Building className="w-4 h-4 text-[#C5A15A]" />
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] space-y-2 text-xs text-zinc-400 shadow-md">
+            <div className="flex items-center gap-2 text-white font-bold">
+              <Building className="w-4 h-4 text-[#EAB308]" />
               <span>Gujarat Commercial Hub Presence</span>
             </div>
             <p className="leading-relaxed">
@@ -191,45 +190,45 @@ export const ContactPage: React.FC = () => {
         </div>
 
         {/* Right Column: Structured Consultation Form */}
-        <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-lg border border-slate-200 shadow-sm">
+        <div className="lg:col-span-7 bg-[#18181B] p-8 sm:p-10 rounded-lg border border-[#27272A] shadow-xl">
           {isSubmitted ? (
             <div className="text-center py-10 space-y-5">
-              <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-black border border-[#EAB308] text-[#EAB308] rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle className="w-10 h-10" />
               </div>
               <div className="space-y-1">
-                <h3 className="font-serif text-2xl font-bold text-[#10243A]">
+                <h3 className="font-serif text-2xl font-bold text-white">
                   Consultation Request Registered
                 </h3>
-                <p className="text-xs font-mono font-semibold text-slate-500">
+                <p className="text-xs font-mono font-bold text-[#EAB308]">
                   Inquiry Reference Code: {refCode}
                 </p>
-                <p className="text-sm text-slate-600 max-w-md mx-auto pt-2 leading-relaxed">
+                <p className="text-sm text-zinc-300 max-w-md mx-auto pt-2 leading-relaxed">
                   Thank you, <strong>{formState.fullName}</strong>. Your enquiry for <strong>{formState.serviceOfInterest}</strong> has been logged. We will review your details and contact you via {formState.preferredContactMethod} during business hours.
                 </p>
               </div>
 
-              <div className="p-4 bg-[#F5F7FA] rounded border border-slate-200 max-w-md mx-auto text-left text-xs space-y-1.5">
+              <div className="p-4 bg-[#121214] rounded border border-[#27272A] max-w-md mx-auto text-left text-xs space-y-1.5">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Entity Category:</span>
-                  <span className="font-medium text-slate-800">{formState.entityType}</span>
+                  <span className="text-zinc-400">Entity Category:</span>
+                  <span className="font-medium text-white">{formState.entityType}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Phone:</span>
-                  <span className="font-medium text-slate-800">{formState.phone}</span>
+                  <span className="text-zinc-400">Phone:</span>
+                  <span className="font-medium text-white">{formState.phone}</span>
                 </div>
                 {formState.email && (
                   <div className="flex justify-between">
-                    <span className="text-slate-500">Email:</span>
-                    <span className="font-medium text-slate-800">{formState.email}</span>
+                    <span className="text-zinc-400">Email:</span>
+                    <span className="font-medium text-white">{formState.email}</span>
                   </div>
                 )}
-                <div className="pt-1.5 border-t border-slate-200 flex items-center justify-between text-[11px] text-emerald-700">
+                <div className="pt-2 border-t border-[#27272A] flex items-center justify-between text-[11px] text-[#EAB308]">
                   <span className="flex items-center gap-1 font-semibold">
                     <Database className="w-3.5 h-3.5" />
                     <span>Database Synchronized</span>
                   </span>
-                  <span className="font-mono text-slate-500">Project: ysbgxhpvicfmznupnksd</span>
+                  <span className="font-mono text-zinc-400">Supabase</span>
                 </div>
               </div>
 
@@ -238,7 +237,7 @@ export const ContactPage: React.FC = () => {
                   href={`https://wa.me/${siteConfig.contact.whatsappNumber}?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#25D366] hover:bg-[#20ba5a] rounded-sm transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-black bg-[#25D366] hover:bg-[#20ba5a] rounded-sm transition-colors shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
                   <span>Transmit to WhatsApp Now</span>
@@ -257,7 +256,7 @@ export const ContactPage: React.FC = () => {
                       consentChecked: true,
                     });
                   }}
-                  className="px-6 py-3 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-sm transition-colors"
+                  className="px-6 py-3 text-xs font-semibold text-zinc-300 bg-[#121214] hover:bg-[#27272A] border border-[#27272A] rounded-sm transition-colors cursor-pointer"
                 >
                   Submit Another Enquiry
                 </button>
@@ -266,18 +265,18 @@ export const ContactPage: React.FC = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <h3 className="font-serif text-2xl font-bold text-[#10243A]">
+                <h3 className="font-serif text-2xl font-bold text-white">
                   Request a Formal Consultation
                 </h3>
-                <p className="text-xs text-slate-500 mt-1">
+                <p className="text-xs text-zinc-400 mt-1">
                   Fill in your details below. We respond promptly within 24 business hours.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Your Full Name *
+                  <label className="block text-xs font-bold text-zinc-300 mb-1">
+                    Your Full Name <span className="text-[#EAB308]">*</span>
                   </label>
                   <input
                     type="text"
@@ -285,14 +284,14 @@ export const ContactPage: React.FC = () => {
                     value={formState.fullName}
                     onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
                     placeholder="e.g. Bhavesh Shah"
-                    className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A]"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:ring-1 focus:ring-[#EAB308] focus:outline-none placeholder:text-zinc-600"
                   />
-                  {errors.fullName && <p className="text-xs text-rose-600 mt-1">{errors.fullName}</p>}
+                  {errors.fullName && <p className="text-xs text-rose-500 mt-1">{errors.fullName}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Mobile Number *
+                  <label className="block text-xs font-bold text-zinc-300 mb-1">
+                    Mobile Number <span className="text-[#EAB308]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -300,15 +299,15 @@ export const ContactPage: React.FC = () => {
                     value={formState.phone}
                     onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     placeholder="e.g. 98250 54321"
-                    className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A]"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:ring-1 focus:ring-[#EAB308] focus:outline-none placeholder:text-zinc-600"
                   />
-                  {errors.phone && <p className="text-xs text-rose-600 mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-xs text-rose-500 mt-1">{errors.phone}</p>}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-zinc-300 mb-1">
                     Email Address (Optional)
                   </label>
                   <input
@@ -316,14 +315,14 @@ export const ContactPage: React.FC = () => {
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     placeholder="name@business.in"
-                    className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A]"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:ring-1 focus:ring-[#EAB308] focus:outline-none placeholder:text-zinc-600"
                   />
-                  {errors.email && <p className="text-xs text-rose-600 mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-xs text-rose-500 mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
-                    Business / Entity Profile *
+                  <label className="block text-xs font-bold text-zinc-300 mb-1">
+                    Business / Entity Profile <span className="text-[#EAB308]">*</span>
                   </label>
                   <select
                     value={formState.entityType}
@@ -333,7 +332,7 @@ export const ContactPage: React.FC = () => {
                         entityType: e.target.value as ConsultationFormState["entityType"],
                       })
                     }
-                    className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A] bg-white"
+                    className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:outline-none"
                   >
                     <option value="Business / MSME">Business / MSME</option>
                     <option value="Manufacturing / Industrial">Manufacturing / Industrial</option>
@@ -345,13 +344,13 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
-                  Primary Service Requirement *
+                <label className="block text-xs font-bold text-zinc-300 mb-1">
+                  Primary Service Requirement <span className="text-[#EAB308]">*</span>
                 </label>
                 <select
                   value={formState.serviceOfInterest}
                   onChange={(e) => setFormState({ ...formState, serviceOfInterest: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A] bg-white"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:outline-none"
                 >
                   <option value="Cost Optimization & Cost Analysis">Cost Optimization & Cost Analysis</option>
                   <option value="Cost Audit Support (CRA-1 Assistance)">Cost Audit Support (CRA-1 Assistance)</option>
@@ -363,7 +362,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-zinc-300 mb-1">
                   Scope Outline / Specific Situation
                 </label>
                 <textarea
@@ -371,12 +370,12 @@ export const ContactPage: React.FC = () => {
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   placeholder="Mention your turnover bracket, pending statutory deadlines, or specific areas of concern..."
-                  className="w-full px-3.5 py-2.5 text-xs border border-slate-300 rounded focus:border-[#10243A] focus:ring-1 focus:ring-[#10243A]"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#121214] border border-[#27272A] text-white rounded focus:border-[#EAB308] focus:ring-1 focus:ring-[#EAB308] focus:outline-none placeholder:text-zinc-600"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                <label className="block text-xs font-bold text-zinc-300 mb-1.5">
                   Preferred Communication Channel:
                 </label>
                 <div className="flex gap-4 text-xs">
@@ -387,7 +386,7 @@ export const ContactPage: React.FC = () => {
                       value="WhatsApp"
                       checked={formState.preferredContactMethod === "WhatsApp"}
                       onChange={() => setFormState({ ...formState, preferredContactMethod: "WhatsApp" })}
-                      className="text-[#10243A]"
+                      className="accent-[#EAB308]"
                     />
                     <span>WhatsApp</span>
                   </label>
@@ -398,7 +397,7 @@ export const ContactPage: React.FC = () => {
                       value="Phone Call"
                       checked={formState.preferredContactMethod === "Phone Call"}
                       onChange={() => setFormState({ ...formState, preferredContactMethod: "Phone Call" })}
-                      className="text-[#10243A]"
+                      className="accent-[#EAB308]"
                     />
                     <span>Phone Call</span>
                   </label>
@@ -409,32 +408,32 @@ export const ContactPage: React.FC = () => {
                       value="Email"
                       checked={formState.preferredContactMethod === "Email"}
                       onChange={() => setFormState({ ...formState, preferredContactMethod: "Email" })}
-                      className="text-[#10243A]"
+                      className="accent-[#EAB308]"
                     />
                     <span>Email</span>
                   </label>
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-100">
-                <label className="flex items-start gap-2 cursor-pointer text-xs text-slate-600">
+              <div className="pt-2 border-t border-[#27272A]">
+                <label className="flex items-start gap-2 cursor-pointer text-xs text-zinc-400">
                   <input
                     type="checkbox"
                     checked={formState.consentChecked}
                     onChange={(e) => setFormState({ ...formState, consentChecked: e.target.checked })}
-                    className="mt-0.5 text-[#10243A] rounded-sm"
+                    className="mt-0.5 accent-[#EAB308]"
                   />
                   <span>
                     I confirm this request is for professional consulting inquiry. I acknowledge that preliminary discussion does not constitute a formal legal or statutory audit engagement.
                   </span>
                 </label>
-                {errors.consent && <p className="text-xs text-rose-600 mt-1">{errors.consent}</p>}
+                {errors.consent && <p className="text-xs text-rose-500 mt-1">{errors.consent}</p>}
               </div>
 
               <button
                 type="submit"
                 disabled={isSaving}
-                className="w-full py-3.5 px-6 text-xs font-semibold uppercase tracking-wider text-[#10243A] bg-[#C5A15A] hover:bg-[#D8BA76] transition-colors rounded-sm cursor-pointer shadow-sm flex items-center justify-center gap-2 disabled:opacity-70"
+                className="w-full py-3.5 px-6 text-xs font-bold uppercase tracking-wider text-black bg-[#EAB308] hover:bg-[#FACC15] transition-all rounded-sm cursor-pointer shadow-lg shadow-yellow-500/20 flex items-center justify-center gap-2 disabled:opacity-70 active:scale-95"
               >
                 {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                 <span>{isSaving ? "Saving to Database..." : "Submit Consultation Request"}</span>

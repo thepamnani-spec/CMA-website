@@ -4,34 +4,34 @@ import { AlertTriangle, ArrowLeft, ShieldCheck } from "lucide-react";
 
 export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({ navigate }) => {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10 text-zinc-100">
       <button
         onClick={() => navigate("/")}
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#10243A] transition-colors cursor-pointer"
+        className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-400 hover:text-[#EAB308] transition-colors cursor-pointer"
       >
-        <ArrowLeft className="w-3.5 h-3.5" />
+        <ArrowLeft className="w-3.5 h-3.5 stroke-[2.5]" />
         <span>Return to Home</span>
       </button>
 
       <div className="space-y-3">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAB308]">
           <ShieldCheck className="w-4 h-4" />
           <span>Notice of Terms & Scope</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#10243A]">
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-white">
           Website Disclaimer & Regulatory Notice
         </h1>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-zinc-400">
           Statutory Disclosure and Terms of Use for Krish & Associate
         </p>
       </div>
 
-      <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-10 space-y-8 text-sm text-slate-700 leading-relaxed">
+      <div className="bg-[#18181B] rounded-lg border border-[#27272A] p-8 sm:p-10 space-y-8 text-sm text-zinc-300 leading-relaxed shadow-xl">
         
         {/* Core Regulatory Disclosure */}
-        <div className="p-5 bg-amber-50/80 border border-amber-200 rounded-lg text-xs text-amber-900 space-y-2 leading-relaxed">
-          <div className="flex items-center gap-2 font-bold text-amber-950 uppercase tracking-wider">
-            <AlertTriangle className="w-4 h-4 text-amber-700" />
+        <div className="p-5 bg-[#121214] border border-[#EAB308]/40 rounded-lg text-xs text-zinc-300 space-y-2 leading-relaxed">
+          <div className="flex items-center gap-2 font-bold text-[#EAB308] uppercase tracking-wider">
+            <AlertTriangle className="w-4 h-4 text-[#EAB308]" />
             <span>Essential Regulatory Disclosure</span>
           </div>
           <p>
@@ -40,7 +40,7 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </div>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             1. Informational & Educational Purpose Only
           </h2>
           <p>
@@ -49,7 +49,7 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             2. Absence of Professional-Client Relationship
           </h2>
           <p>
@@ -58,7 +58,7 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             3. Regulated Services & Statutory Cost Audit
           </h2>
           <p>
@@ -67,7 +67,7 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             4. No Guarantee of Outcomes or Tax Savings
           </h2>
           <p>
@@ -76,7 +76,7 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             5. Date Sensitivity of Legal & Tax Content
           </h2>
           <p>
@@ -85,13 +85,13 @@ export const DisclaimerPage: React.FC<{ navigate: (path: string) => void }> = ({
         </section>
 
         <section className="space-y-2">
-          <h2 className="font-serif text-lg font-bold text-[#10243A]">
+          <h2 className="font-serif text-lg font-bold text-white">
             6. Jurisdiction & Contact
           </h2>
           <p>
             This website and any dispute arising from its use are governed by the laws of India and subject to the exclusive jurisdiction of the competent courts in Ahmedabad, Gujarat.
           </p>
-          <div className="pt-2 text-xs text-slate-500">
+          <div className="pt-2 text-xs text-zinc-400">
             For questions regarding this disclaimer, email: {siteConfig.contact.email}
           </div>
         </section>

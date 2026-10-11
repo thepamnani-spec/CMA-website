@@ -3,7 +3,7 @@ import { knowledgeHubArticles } from "../data/knowledgeHubData";
 import { TaxRegimeCalculator } from "../components/tools/TaxRegimeCalculator";
 import { GstLateFeeCalculator } from "../components/tools/GstLateFeeCalculator";
 import { WorkingCapitalAnalyzer } from "../components/tools/WorkingCapitalAnalyzer";
-import { BookOpen, Calculator, CheckCircle2, ArrowRight } from "lucide-react";
+import { BookOpen, Calculator, CheckCircle2 } from "lucide-react";
 
 interface KnowledgeHubPageProps {
   navigate: (path: string) => void;
@@ -11,7 +11,6 @@ interface KnowledgeHubPageProps {
 }
 
 export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
-  navigate,
   onOpenConsultation,
 }) => {
   const [activeTab, setActiveTab] = useState<"calculators" | "articles">("calculators");
@@ -19,30 +18,30 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
   const [expandedArticleId, setExpandedArticleId] = useState<string | null>("new-vs-old-tax-regime");
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 text-zinc-100">
       {/* Header */}
       <div className="max-w-3xl space-y-3">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAB308]">
           <span>Financial Education</span>
           <span aria-hidden="true">·</span>
           <span>Krish & Associate</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10243A]">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
           Tax & Financial Knowledge Hub
         </h1>
-        <p className="text-base text-slate-600 leading-relaxed">
+        <p className="text-base text-zinc-300 leading-relaxed">
           Clear, practical financial guides and interactive compliance tools designed to help business promoters and individuals navigate Indian taxation and cash flow management.
         </p>
       </div>
 
       {/* Main Mode Switch: Segmented control */}
-      <div className="flex items-center gap-2 p-1.5 bg-slate-100 rounded-lg max-w-fit">
+      <div className="flex items-center gap-2 p-1.5 bg-[#18181B] border border-[#27272A] rounded-lg max-w-fit">
         <button
           onClick={() => setActiveTab("calculators")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
+          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-md transition-colors cursor-pointer ${
             activeTab === "calculators"
-              ? "bg-[#10243A] text-white shadow-xs"
-              : "text-slate-600 hover:text-slate-900"
+              ? "bg-[#EAB308] text-black shadow-md"
+              : "text-zinc-400 hover:text-white"
           }`}
         >
           <Calculator className="w-3.5 h-3.5" />
@@ -50,10 +49,10 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
         </button>
         <button
           onClick={() => setActiveTab("articles")}
-          className={`flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
+          className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-md transition-colors cursor-pointer ${
             activeTab === "articles"
-              ? "bg-[#10243A] text-white shadow-xs"
-              : "text-slate-600 hover:text-slate-900"
+              ? "bg-[#EAB308] text-black shadow-md"
+              : "text-zinc-400 hover:text-white"
           }`}
         >
           <BookOpen className="w-3.5 h-3.5" />
@@ -68,30 +67,30 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
           <div className="flex flex-wrap gap-2 text-xs">
             <button
               onClick={() => setActiveCalc("regime")}
-              className={`px-3 py-1.5 rounded border transition-colors cursor-pointer ${
+              className={`px-3.5 py-2 rounded border transition-colors cursor-pointer ${
                 activeCalc === "regime"
-                  ? "bg-[#C5A15A] text-[#10243A] font-bold border-[#C5A15A]"
-                  : "bg-white text-slate-700 border-slate-300 hover:border-slate-400"
+                  ? "bg-[#EAB308] text-black font-bold border-[#EAB308] shadow-sm"
+                  : "bg-[#18181B] text-zinc-300 border-[#27272A] hover:border-[#EAB308]"
               }`}
             >
               1. Income Tax Regime Evaluator (Sec 115BAC vs Old)
             </button>
             <button
               onClick={() => setActiveCalc("gst")}
-              className={`px-3 py-1.5 rounded border transition-colors cursor-pointer ${
+              className={`px-3.5 py-2 rounded border transition-colors cursor-pointer ${
                 activeCalc === "gst"
-                  ? "bg-[#C5A15A] text-[#10243A] font-bold border-[#C5A15A]"
-                  : "bg-white text-slate-700 border-slate-300 hover:border-slate-400"
+                  ? "bg-[#EAB308] text-black font-bold border-[#EAB308] shadow-sm"
+                  : "bg-[#18181B] text-zinc-300 border-[#27272A] hover:border-[#EAB308]"
               }`}
             >
               2. GST Late Fee & Sec 50 Interest Estimator
             </button>
             <button
               onClick={() => setActiveCalc("working-capital")}
-              className={`px-3 py-1.5 rounded border transition-colors cursor-pointer ${
+              className={`px-3.5 py-2 rounded border transition-colors cursor-pointer ${
                 activeCalc === "working-capital"
-                  ? "bg-[#C5A15A] text-[#10243A] font-bold border-[#C5A15A]"
-                  : "bg-white text-slate-700 border-slate-300 hover:border-slate-400"
+                  ? "bg-[#EAB308] text-black font-bold border-[#EAB308] shadow-sm"
+                  : "bg-[#18181B] text-zinc-300 border-[#27272A] hover:border-[#EAB308]"
               }`}
             >
               3. Working Capital & Cash Cycle Diagnostic
@@ -122,40 +121,40 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
               return (
                 <article
                   key={article.id}
-                  className="bg-white rounded-lg border border-slate-200 p-8 space-y-4 hover:border-slate-300 transition-colors shadow-xs"
+                  className="bg-[#18181B] rounded-lg border border-[#27272A] p-8 space-y-4 hover:border-[#EAB308] transition-colors shadow-xl"
                 >
-                  <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <span className="font-semibold text-slate-800">{article.category}</span>
-                    <span aria-hidden="true">·</span>
+                  <div className="flex items-center gap-2 text-xs text-zinc-400">
+                    <span className="font-bold text-[#EAB308]">{article.category}</span>
+                    <span aria-hidden="true" className="text-zinc-700">·</span>
                     <span>{article.readTime}</span>
-                    <span aria-hidden="true">·</span>
+                    <span aria-hidden="true" className="text-zinc-700">·</span>
                     <span>{article.publishedDate}</span>
                   </div>
 
-                  <h2 className="font-serif text-2xl font-bold text-[#10243A]">
+                  <h2 className="font-serif text-2xl font-bold text-white">
                     {article.title}
                   </h2>
 
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-zinc-300 leading-relaxed">
                     {article.summary}
                   </p>
 
                   {/* Expandable Article Content */}
                   {isExpanded && (
-                    <div className="pt-4 border-t border-slate-100 space-y-4 text-sm text-slate-700 leading-relaxed">
+                    <div className="pt-4 border-t border-[#27272A] space-y-4 text-sm text-zinc-300 leading-relaxed">
                       {article.content.map((p, idx) => (
                         <p key={idx}>{p}</p>
                       ))}
 
                       {/* Key Takeaways */}
-                      <div className="p-4 bg-[#F5F7FA] rounded border border-slate-200 space-y-2 mt-4">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-[#10243A] block">
+                      <div className="p-4 bg-[#121214] rounded border border-[#27272A] space-y-2 mt-4">
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#EAB308] block">
                           Core Practical Takeaways:
                         </span>
-                        <ul className="space-y-1.5 text-xs text-slate-700">
+                        <ul className="space-y-1.5 text-xs text-zinc-300">
                           {article.keyTakeaways.map((takeaway, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A15A] shrink-0 mt-0.5" />
+                              <CheckCircle2 className="w-3.5 h-3.5 text-[#EAB308] shrink-0 mt-0.5" />
                               <span>{takeaway}</span>
                             </li>
                           ))}
@@ -164,7 +163,7 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
 
                       {/* Official References */}
                       {article.officialReferences && (
-                        <div className="text-xs text-slate-400 pt-2">
+                        <div className="text-xs text-zinc-500 pt-2 border-t border-[#27272A]">
                           <strong>Statutory References:</strong>{" "}
                           {article.officialReferences.join(" · ")}
                         </div>
@@ -177,14 +176,14 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
                       onClick={() =>
                         setExpandedArticleId(isExpanded ? null : article.id)
                       }
-                      className="text-xs font-semibold text-[#10243A] hover:text-[#C5A15A] transition-colors cursor-pointer"
+                      className="text-xs font-bold text-[#EAB308] hover:text-[#FACC15] transition-colors cursor-pointer"
                     >
                       {isExpanded ? "← Collapse Guide" : "Read Complete Guide & Takeaways →"}
                     </button>
 
                     <button
                       onClick={() => onOpenConsultation(`Inquiry from article: ${article.title}`)}
-                      className="text-xs text-slate-500 hover:text-slate-900 cursor-pointer"
+                      className="text-xs font-medium text-zinc-400 hover:text-white cursor-pointer"
                     >
                       Discuss with Krish & Associate
                     </button>
@@ -197,18 +196,18 @@ export const KnowledgeHubPage: React.FC<KnowledgeHubPageProps> = ({
       )}
 
       {/* Footer Banner */}
-      <div className="bg-[#10243A] text-white p-8 rounded-lg border border-[#183B56] flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="bg-[#121214] text-white p-8 rounded-lg border border-[#27272A] flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div>
           <h3 className="font-serif text-lg font-bold text-white">
             Have a Specific Case or Complex Tax Scenario?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
+          <p className="text-xs sm:text-sm text-zinc-300 mt-1 max-w-xl">
             Generic tax guides outline legal rules, but entity specifics—such as turnover thresholds, prior-year depreciation, and vendor compliance history—dictate the right path.
           </p>
         </div>
         <button
           onClick={() => onOpenConsultation("Case Review Request")}
-          className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#10243A] bg-[#C5A15A] hover:bg-[#D8BA76] transition-colors rounded-sm cursor-pointer whitespace-nowrap shrink-0"
+          className="px-6 py-3 text-xs font-bold uppercase tracking-wider text-black bg-[#EAB308] hover:bg-[#FACC15] transition-all rounded-sm cursor-pointer whitespace-nowrap shrink-0 shadow-lg shadow-yellow-500/20 active:scale-95"
         >
           Request Direct Case Review
         </button>

@@ -188,7 +188,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F7FA] text-[#263445]">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A] text-zinc-100">
       {/* 3-Zone Top Navigation Bar */}
       <Header
         currentPath={currentPath}

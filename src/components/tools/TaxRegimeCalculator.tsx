@@ -73,16 +73,16 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
   };
 
   return (
-    <div className="bg-white rounded-lg border border-slate-200 p-6 sm:p-8 shadow-sm">
-      <div className="flex items-center gap-3 pb-6 border-b border-slate-100">
-        <div className="p-2.5 bg-[#10243A] text-[#C5A15A] rounded">
+    <div className="bg-[#18181B] rounded-lg border border-[#27272A] p-6 sm:p-8 shadow-xl text-zinc-100">
+      <div className="flex items-center gap-3 pb-6 border-b border-[#27272A]">
+        <div className="p-2.5 bg-black text-[#EAB308] border border-[#EAB308] rounded">
           <Calculator className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="font-serif text-lg font-bold text-[#10243A]">
+          <h3 className="font-serif text-lg font-bold text-white">
             Income Tax Regime Evaluator (FY 2024-25 & 2025-26)
           </h3>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-zinc-400">
             Compare Section 115BAC vs Old Regime with updated standard deductions and tax slabs.
           </p>
         </div>
@@ -93,10 +93,10 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
         <div className="lg:col-span-7 space-y-4">
           <div>
             <div className="flex justify-between items-center mb-1">
-              <label className="text-xs font-semibold text-slate-700">
+              <label className="text-xs font-bold text-zinc-300">
                 Gross Annual Income (Salary / Professional Gross)
               </label>
-              <span className="text-xs font-mono font-bold text-[#10243A] tabular-nums">
+              <span className="text-xs font-mono font-bold text-[#EAB308] tabular-nums">
                 {formatRupees(grossIncome)}
               </span>
             </div>
@@ -107,23 +107,23 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
               step="50000"
               value={grossIncome}
               onChange={(e) => setGrossIncome(Number(e.target.value))}
-              className="w-full accent-[#10243A] cursor-pointer"
+              className="w-full accent-[#EAB308] cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] text-slate-400 mt-0.5">
+            <div className="flex justify-between text-[10px] text-zinc-500 mt-0.5">
               <span>₹3 Lakh</span>
               <span>₹25 Lakh</span>
               <span>₹50 Lakh</span>
             </div>
           </div>
 
-          <div className="pt-2 border-t border-slate-100">
-            <span className="text-xs font-semibold text-slate-600 uppercase tracking-wider block mb-3">
+          <div className="pt-2 border-t border-[#27272A]">
+            <span className="text-xs font-bold text-[#EAB308] uppercase tracking-wider block mb-3">
               Eligible Deductions (Old Regime Applicable)
             </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <label className="block text-slate-600 mb-1">Section 80C (Max ₹1.5L)</label>
+                <label className="block text-zinc-400 mb-1">Section 80C (Max ₹1.5L)</label>
                 <input
                   type="number"
                   min="0"
@@ -131,12 +131,12 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
                   step="10000"
                   value={sec80c}
                   onChange={(e) => setSec80c(Number(e.target.value))}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded font-mono tabular-nums text-xs"
+                  className="w-full px-3 py-1.5 bg-[#121214] border border-[#27272A] text-white rounded font-mono tabular-nums text-xs focus:border-[#EAB308] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-600 mb-1">Section 80D Health Insurance</label>
+                <label className="block text-zinc-400 mb-1">Section 80D Health Insurance</label>
                 <input
                   type="number"
                   min="0"
@@ -144,12 +144,12 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
                   step="5000"
                   value={sec80d}
                   onChange={(e) => setSec80d(Number(e.target.value))}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded font-mono tabular-nums text-xs"
+                  className="w-full px-3 py-1.5 bg-[#121214] border border-[#27272A] text-white rounded font-mono tabular-nums text-xs focus:border-[#EAB308] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-600 mb-1">HRA Exemption Claimed</label>
+                <label className="block text-zinc-400 mb-1">HRA Exemption Claimed</label>
                 <input
                   type="number"
                   min="0"
@@ -157,12 +157,12 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
                   step="10000"
                   value={hra}
                   onChange={(e) => setHra(Number(e.target.value))}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded font-mono tabular-nums text-xs"
+                  className="w-full px-3 py-1.5 bg-[#121214] border border-[#27272A] text-white rounded font-mono tabular-nums text-xs focus:border-[#EAB308] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-600 mb-1">Section 24(b) Home Loan Interest</label>
+                <label className="block text-zinc-400 mb-1">Section 24(b) Home Loan Interest</label>
                 <input
                   type="number"
                   min="0"
@@ -170,7 +170,7 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
                   step="10000"
                   value={homeLoanInterest}
                   onChange={(e) => setHomeLoanInterest(Number(e.target.value))}
-                  className="w-full px-3 py-1.5 border border-slate-300 rounded font-mono tabular-nums text-xs"
+                  className="w-full px-3 py-1.5 bg-[#121214] border border-[#27272A] text-white rounded font-mono tabular-nums text-xs focus:border-[#EAB308] focus:outline-none"
                 />
               </div>
             </div>
@@ -178,52 +178,52 @@ export const TaxRegimeCalculator: React.FC<{ onEnquire: () => void }> = ({ onEnq
         </div>
 
         {/* Results Comparison Card */}
-        <div className="lg:col-span-5 bg-[#F5F7FA] p-5 rounded-lg border border-slate-200 flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-[#121214] p-5 rounded-lg border border-[#27272A] flex flex-col justify-between shadow-md">
           <div className="space-y-4">
-            <div className="p-3 bg-white rounded border border-slate-200">
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 block">
+            <div className="p-3.5 bg-[#18181B] rounded border border-[#EAB308]/40">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 block">
                 Calculated Recommendation
               </span>
-              <p className="text-sm font-bold text-[#10243A] mt-0.5 flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-emerald-600" />
-                <span>{recommendedRegime}</span>
+              <p className="text-sm font-bold text-white mt-0.5 flex items-center gap-1.5">
+                <Check className="w-4 h-4 text-[#EAB308]" />
+                <span className="text-[#EAB308]">{recommendedRegime}</span>
               </p>
-              <p className="text-xs text-emerald-700 font-medium mt-1">
-                Estimated Tax Benefit: {formatRupees(taxDifference)} per year
+              <p className="text-xs text-zinc-300 font-medium mt-1">
+                Estimated Tax Benefit: <strong className="text-white">{formatRupees(taxDifference)}</strong> per year
               </p>
             </div>
 
             <div className="space-y-2 text-xs">
-              <div className="flex justify-between items-center py-1.5 border-b border-slate-200">
-                <span className="text-slate-600">New Regime Tax (Sec 115BAC):</span>
-                <span className="font-mono font-bold text-[#10243A] tabular-nums">
+              <div className="flex justify-between items-center py-1.5 border-b border-[#27272A]">
+                <span className="text-zinc-400">New Regime Tax (Sec 115BAC):</span>
+                <span className="font-mono font-bold text-white tabular-nums">
                   {formatRupees(newTotalTax)}
                 </span>
               </div>
-              <div className="flex justify-between items-center py-1.5 border-b border-slate-200">
-                <span className="text-slate-600">Old Regime Tax:</span>
-                <span className="font-mono font-bold text-[#10243A] tabular-nums">
+              <div className="flex justify-between items-center py-1.5 border-b border-[#27272A]">
+                <span className="text-zinc-400">Old Regime Tax:</span>
+                <span className="font-mono font-bold text-white tabular-nums">
                   {formatRupees(oldTotalTax)}
                 </span>
               </div>
               <div className="flex justify-between items-center py-1.5">
-                <span className="text-slate-500">Standard Deduction Applied:</span>
-                <span className="font-mono text-slate-700 tabular-nums">
+                <span className="text-zinc-500">Standard Deduction Applied:</span>
+                <span className="font-mono text-zinc-300 tabular-nums">
                   ₹75,000 (New) / ₹50,000 (Old)
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="pt-4 mt-4 border-t border-slate-200">
+          <div className="pt-4 mt-4 border-t border-[#27272A]">
             <button
               onClick={onEnquire}
-              className="w-full py-2.5 px-4 text-xs font-semibold uppercase tracking-wider text-[#10243A] bg-[#C5A15A] hover:bg-[#D8BA76] transition-colors rounded-sm flex items-center justify-center gap-1.5 cursor-pointer"
+              className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#EAB308] hover:bg-[#FACC15] transition-all rounded-sm flex items-center justify-center gap-1.5 cursor-pointer shadow-lg shadow-yellow-500/20 active:scale-95"
             >
               <span>Get Professional Filing Support</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
             </button>
-            <p className="text-[10px] text-slate-400 text-center mt-2">
+            <p className="text-[10px] text-zinc-500 text-center mt-2">
               For indicative assessment. Accurate liability depends on AIS reconciliation and specific schedules.
             </p>
           </div>

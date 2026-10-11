@@ -1,6 +1,6 @@
 import React from "react";
 import { siteConfig } from "../config/siteConfig";
-import { ShieldCheck, MapPin, CheckCircle2, UserCheck, ArrowRight, Building2 } from "lucide-react";
+import { ShieldCheck, MapPin, ArrowRight, Building2 } from "lucide-react";
 import { TeamRotator } from "../components/common/TeamRotator";
 
 interface AboutPageProps {
@@ -8,53 +8,53 @@ interface AboutPageProps {
   onOpenConsultation: () => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultation }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ onOpenConsultation }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 text-zinc-100">
       {/* Header */}
       <div className="max-w-3xl space-y-4">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAB308]">
           <span>About Krish & Associate</span>
           <span aria-hidden="true">·</span>
           <span>Ahmedabad, Gujarat</span>
         </div>
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#10243A]">
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
           Built on Rigorous Financial Discipline and Clear Communication
         </h1>
-        <p className="text-base text-slate-600 leading-relaxed">
+        <p className="text-base text-zinc-300 leading-relaxed">
           An independent financial management, cost analysis, and tax compliance advisory practice led by Krish Pamnani, committed to grounded business support without inflated claims.
         </p>
       </div>
 
       {/* Leadership Profile */}
-      <div className="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
+      <div className="bg-[#121214] rounded-lg border border-[#27272A] p-8 sm:p-12 shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4 space-y-4">
-            <div className="w-20 h-20 bg-[#10243A] text-[#C5A15A] rounded-lg flex items-center justify-center font-serif text-3xl font-bold">
+            <div className="w-20 h-20 bg-black text-[#EAB308] border-2 border-[#EAB308] rounded-lg flex items-center justify-center font-serif text-3xl font-bold shadow-lg">
               KP
             </div>
             <div>
-              <h2 className="font-serif text-2xl font-bold text-[#10243A]">
+              <h2 className="font-serif text-2xl font-bold text-white">
                 {siteConfig.founder.name}
               </h2>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#C5A15A] mt-0.5">
+              <p className="text-xs font-bold uppercase tracking-wider text-[#EAB308] mt-1">
                 {siteConfig.founder.role}
               </p>
             </div>
-            <div className="pt-2 text-xs text-slate-500 space-y-1.5 border-t border-slate-100">
+            <div className="pt-2 text-xs text-zinc-400 space-y-1.5 border-t border-[#27272A]">
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                <MapPin className="w-3.5 h-3.5 text-[#EAB308]" />
                 <span>Ahmedabad, Gujarat, India</span>
               </div>
               <div className="flex items-center gap-2">
-                <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                <Building2 className="w-3.5 h-3.5 text-[#EAB308]" />
                 <span>Financial & Management Consulting</span>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-8 space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            <h3 className="font-serif text-xl font-bold text-[#10243A]">
+          <div className="lg:col-span-8 space-y-4 text-sm sm:text-base text-zinc-300 leading-relaxed">
+            <h3 className="font-serif text-xl font-bold text-white">
               Founder's Perspective & Approach
             </h3>
             <p>
@@ -73,10 +73,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
       {/* Advisory Team & Associates Showcase */}
       <div className="space-y-4">
         <div className="space-y-1">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#C5A15A] block">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#EAB308] block">
             Practice Specialists
           </span>
-          <h3 className="font-serif text-2xl font-bold text-[#10243A]">
+          <h3 className="font-serif text-2xl font-bold text-white">
             Advisory Team & Domain Associates
           </h3>
         </div>
@@ -84,8 +84,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
       </div>
 
       {/* Ethical Code & Statutory Boundaries */}
-      <div className="bg-[#10243A] text-white rounded-lg border border-[#183B56] p-8 sm:p-12 space-y-6">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+      <div className="bg-[#121214] text-white rounded-lg border border-[#27272A] p-8 sm:p-12 space-y-6 shadow-2xl">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#EAB308]">
           <ShieldCheck className="w-4 h-4" />
           <span>Professional Integrity & Code</span>
         </div>
@@ -94,9 +94,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
           Our Commitment to Truthful and Transparent Representation
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 text-sm text-slate-300 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2 text-sm text-zinc-300 leading-relaxed">
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#EAB308] uppercase tracking-wider">
               Accurate Identity & Scope
             </h4>
             <p>
@@ -105,7 +105,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#EAB308] uppercase tracking-wider">
               Statutory Certification & Regulated Support
             </h4>
             <p>
@@ -114,7 +114,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#EAB308] uppercase tracking-wider">
               No Fabricated Guarantees
             </h4>
             <p>
@@ -123,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-[#EAB308] uppercase tracking-wider">
               Confidentiality & Data Care
             </h4>
             <p>
@@ -136,75 +136,75 @@ export const AboutPage: React.FC<AboutPageProps> = ({ navigate, onOpenConsultati
       {/* Target Audiences We Serve */}
       <div className="space-y-6">
         <div className="space-y-1">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#C5A15A]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#EAB308]">
             Ecosystem Focus
           </span>
-          <h3 className="font-serif text-2xl font-bold text-[#10243A]">
+          <h3 className="font-serif text-2xl font-bold text-white">
             Who We Partner With in Ahmedabad & Gujarat
           </h3>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2">
-            <h4 className="font-serif text-base font-bold text-[#10243A]">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] hover:border-[#EAB308] transition-colors space-y-2">
+            <h4 className="font-serif text-base font-bold text-white">
               Manufacturing & Processing Units
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Industrial enterprises in Naroda, Vatva, Sanand, Changodar, and across Gujarat seeking cost classification, yield variance tracking, and CRA-1 cost record alignment.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2">
-            <h4 className="font-serif text-base font-bold text-[#10243A]">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] hover:border-[#EAB308] transition-colors space-y-2">
+            <h4 className="font-serif text-base font-bold text-white">
               Wholesale Traders & Distributors
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Commercial businesses managing high transactional volume, complex GSTR-2B Input Tax Credit reconciliation, and multi-state inventory movement.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2">
-            <h4 className="font-serif text-base font-bold text-[#10243A]">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] hover:border-[#EAB308] transition-colors space-y-2">
+            <h4 className="font-serif text-base font-bold text-white">
               Growing MSMEs & Startups
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Enterprises with ₹3 Cr to ₹50 Cr turnover needing Virtual CFO leadership, forward 13-week cash forecasts, and professional banking/CMA dossiers.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2">
-            <h4 className="font-serif text-base font-bold text-[#10243A]">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] hover:border-[#EAB308] transition-colors space-y-2">
+            <h4 className="font-serif text-base font-bold text-white">
               Salaried & Professional Taxpayers
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Individuals navigating New vs. Old Tax Regime evaluation, AIS/TIS dividend and securities matching, and timely, defect-free ITR submissions.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-slate-200 space-y-2">
-            <h4 className="font-serif text-base font-bold text-[#10243A]">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] hover:border-[#EAB308] transition-colors space-y-2">
+            <h4 className="font-serif text-base font-bold text-white">
               Business Owners Seeking Clarity
             </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
               Promoters who want concise, digestible explanations of changing GST circulars and Income Tax amendments rather than overwhelming bureaucratic text.
             </p>
           </div>
 
-          <div className="bg-[#F5F7FA] p-6 rounded-lg border border-slate-200 flex flex-col justify-between">
+          <div className="bg-[#18181B] p-6 rounded-lg border border-[#27272A] flex flex-col justify-between">
             <div>
-              <h4 className="font-serif text-base font-bold text-[#10243A]">
+              <h4 className="font-serif text-base font-bold text-white">
                 Have a Specific Question?
               </h4>
-              <p className="text-xs text-slate-600 mt-1">
+              <p className="text-xs text-zinc-400 mt-1">
                 Let us review your books or compliance questions directly.
               </p>
             </div>
             <button
               onClick={onOpenConsultation}
-              className="mt-4 py-2 px-4 text-xs font-semibold uppercase tracking-wider text-[#10243A] bg-[#C5A15A] hover:bg-[#D8BA76] transition-colors rounded-sm flex items-center justify-center gap-1.5 cursor-pointer"
+              className="mt-4 py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#EAB308] hover:bg-[#FACC15] transition-all rounded-sm flex items-center justify-center gap-1.5 cursor-pointer shadow-lg shadow-yellow-500/20 active:scale-95"
             >
               <span>Schedule a Discussion</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
             </button>
           </div>
         </div>
