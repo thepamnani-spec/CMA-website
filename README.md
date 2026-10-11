@@ -117,7 +117,42 @@ npm run preview
 
 ---
 
-## 4. Supabase Database Integration
+## 4. Netlify Deployment Guide
+
+The project is fully pre-configured for Netlify with native SPA rewrites and performance headers via `netlify.toml` and `public/_redirects`.
+
+### Option A: Deploy with Git (Recommended)
+1. Push this repository to **GitHub**, **GitLab**, or **Bitbucket**.
+2. Log in to your [Netlify Dashboard](https://app.netlify.com).
+3. Click **"Add new site"** > **"Import an existing project"**.
+4. Select your Git repository.
+5. Netlify will auto-detect your configuration from `netlify.toml`:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+6. Under **Site configuration** > **Environment variables**, add:
+   - `VITE_SUPABASE_URL`: `https://ysbgxhpvicfmznupnksd.supabase.co`
+   - `VITE_SUPABASE_ANON_KEY`: `sb_publishable_VEP0WWnS3806qESXYtzwfg_iIkxn6LT`
+7. Click **"Deploy site"**.
+
+### Option B: Deploy via Netlify CLI
+```bash
+# Install Netlify CLI globally if needed
+npm install -g netlify-cli
+
+# Run build
+npm run build
+
+# Deploy to production
+netlify deploy --prod --dir=dist
+```
+
+### Option C: Drag & Drop (Manual Deploy)
+1. Run `npm run build` in your terminal.
+2. Drag and drop the generated `dist` folder directly onto the Netlify Sites dashboard at [app.netlify.com/drop](https://app.netlify.com/drop).
+
+---
+
+## 5. Supabase Database Integration
 
 The application connects to your Supabase project for persistent client inquiries and consultation submissions:
 
@@ -160,7 +195,7 @@ USING (true);
 
 ---
 
-## 5. Configuration & WhatsApp Placeholder
+## 6. Configuration & WhatsApp Placeholder
 
 All firm details, contact phone numbers, WhatsApp numbers, and addresses are centralized in:
 `src/config/siteConfig.ts`
@@ -176,7 +211,7 @@ When clicked, it opens:
 
 ---
 
-## 5. Pre-Launch Checklist (10-Point Verification)
+## 7. Pre-Launch Checklist (10-Point Verification)
 
 1. [ ] **Owner Contact Verification**: Replace placeholder WhatsApp number `919876543210` in `src/config/siteConfig.ts` with Krish Pamnani's actual mobile number.
 2. [ ] **Email & Form Delivery**: Update `contact@krishassociate.in` and wire form submission to your preferred transactional email API (e.g. Resend, SendGrid, or AWS SES) or CRM webhook.
@@ -191,7 +226,7 @@ When clicked, it opens:
 
 ---
 
-## 6. Honest Identification of Unresolved Configuration Items
+## 8. Honest Identification of Unresolved Configuration Items
 
 - **WhatsApp Direct Number**: Currently configured with international placeholder `919876543210` until the owner supplies the verified production SIM.
 - **Physical Street Address**: Uses Ahmedabad commercial corridor landmark (`SG Highway Corridor, Ahmedabad 380015`); update to the exact office unit number upon launch.
