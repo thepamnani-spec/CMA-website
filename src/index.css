@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-primary: #10243A;
+  --color-navy-secondary: #183B56;
+  --color-gold-accent: #C5A15A;
+  --color-gold-muted: #D8BA76;
+  --color-surface-light: #F5F7FA;
+  --color-text-main: #263445;
+  --color-text-muted: #5A6A80;
+  --color-border-subtle: #E2E8F0;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: var(--color-text-main);
+  }
+
+  /* Accessible focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--color-gold-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Tabular figures for numbers, tables, and financial amounts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
